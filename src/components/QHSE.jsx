@@ -76,7 +76,7 @@ export default function QHSE() {
             {certificates.map((cert, index) => (
               <a
                 key={index}
-                href="/not-found" // Replace this with your actual 404 route if needed
+                href="/not-found" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full max-w-xs bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-400 overflow-hidden"

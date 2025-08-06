@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { servicesData } from "../data/servicesData"; // We'll store data here
+import { servicesData } from "../data/servicesData"; 
 
 export default function ServiceDetail() {
   const { serviceId } = useParams();

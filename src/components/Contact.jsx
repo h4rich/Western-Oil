@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { Element } from "react-scroll";
+import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 
 export default function Contact() {
@@ -32,7 +31,6 @@ export default function Contact() {
   };
 
   return (
-    <Element name="contact">
     <section id="contact" className="py-16 lg:py-24 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
@@ -191,6 +189,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-    </Element>
   );
 }

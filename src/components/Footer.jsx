@@ -1,6 +1,4 @@
-// src/components/Footer.jsx
 import React from "react";
-import { Factory } from "lucide-react";
 import { SiLinkedin, SiX, SiFacebook } from "react-icons/si";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png"

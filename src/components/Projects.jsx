@@ -1,6 +1,4 @@
 import React from "react";
-import { Element } from "react-scroll";
-import { FiCheckCircle } from "react-icons/fi";
 
 
 const Projects = () => {

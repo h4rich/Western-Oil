@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import { Element } from "react-scroll";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-import { GiDuration } from "react-icons/gi";
 
 
 const bgImages = [
@@ -55,7 +52,6 @@ const Hero = () => {
 
   return (
     <>
-      <Element name="home">
         <div
           className="h-screen w-full bg-cover bg-center transition-all duration-1000 ease-in-out relative"
           style={{ backgroundImage: `url(${bgImages[currentIndex]})` }}
@@ -82,7 +78,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </Element>
+     
 
       {/* Heading and Paragraph Section */}
       <section className="bg-white py-22 px-4 text-center">

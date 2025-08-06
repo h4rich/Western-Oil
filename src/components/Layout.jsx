@@ -1,4 +1,3 @@
-// src/components/Layout.jsx
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -8,7 +7,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <div className="pt-[80px]"> {/* Padding to offset fixed header */}
+      <div className="pt-[80px]"> 
         <Outlet />
       </div>
       <Footer />
