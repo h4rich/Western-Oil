@@ -2,6 +2,7 @@ import React from "react";
 import certificate1 from "../assets/9001-2015.jpeg";
 import certificate2 from "../assets/14001-2015.jpeg";
 import certificate3 from "../assets/45001-2018.jpeg";
+import qhse from "../assets/qhseSection/qhse.png"
 
 export default function QHSE() {
   const certificates = [
@@ -15,7 +16,7 @@ export default function QHSE() {
       {/* Banner */}
       <div className="relative w-full">
         <img
-          src="https://synergenog.com/wp-content/uploads/2022/07/6.png"
+          src = {qhse}
           alt="QHSE Banner"
           className="w-full h-auto object-cover max-h-[450px]"
         />

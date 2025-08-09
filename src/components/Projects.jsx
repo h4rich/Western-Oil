@@ -1,58 +1,65 @@
 import React from "react";
+import ongc from "../assets/logo/ONGC.png"
+import hermes from "../assets/logo/hermes.avif"
+import essar from "../assets/logo/Essar.png"
+import oilmax from "../assets/logo/oilmax.png"
+
+
+
 
 
 const Projects = () => {
   const projects = [
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/ONGC_Logo.svg/1200px-ONGC_Logo.svg.png",
+    logo: ongc,
     title: "ONGC – Cambay Asset",
     date: "12 Jan, 2021",
     description: "Provided Scraping Winch Units for oilfield support.",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/ONGC_Logo.svg/1200px-ONGC_Logo.svg.png",
+    logo: ongc,
     title: "ONGC – Cambay Asset",
     date: "08 Mar, 2021",
     description: "Hot Oil Circulation Unit successfully deployed.",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/ONGC_Logo.svg/1200px-ONGC_Logo.svg.png",
+    logo: ongc,
     title: "ONGC – Ahmedabad Asset",
     date: "14 May, 2021",
     description: "Supplied C/H 30MT and 50MT Workover Rigs.",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/ONGC_Logo.svg/1200px-ONGC_Logo.svg.png",
+    logo: ongc,
     title: "ONGC – Ahmedabad Asset",
     date: "03 Jul, 2021",
     description: "Manpower provided for Well Testing Jobs and Drilling Sites.",
   },
   {
-    logo: "https://images.jdmagicbox.com/v2/comp/gandhinagar-gujarat/r2/9999pxx79.xx79.140406232221.r4r2/catalogue/hermes-technologies-pvt-ltd-gandhinagar-sector-25-gandhinagar-gujarat-ac-drive-dealers-r2xfxzj9sm-250.jpg",
+    logo: hermes,
     title: "Hermes Technologies",
     date: "18 Sep, 2021",
     description: "Provided 30MT Workover Rig for field deployment.",
   },
   {
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPWdoTy4FtlDQmKYP6H0hETF8vvQyrzhrG4g&s",
+    logo: oilmax,
     title: "Oilmax Energy",
     date: "24 Oct, 2021",
     description: "Delivered 30MT Workover Rig for upstream operations.",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Essar_logo.svg/1920px-Essar_logo.svg.png",
+    logo: essar,
     title: "Essar Oil Services",
     date: "10 Nov, 2021",
     description: "Supplied 30MT and 50MT Workover Rigs for field sites.",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/ONGC_Logo.svg/1200px-ONGC_Logo.svg.png",
+    logo: ongc,
     title: "ONGC – Ahmedabad Asset",
     date: "12 Dec, 2021",
     description: "Provided Mobile Pumping Units for enhanced operations.",
   },
   {
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/ONGC_Logo.svg/1200px-ONGC_Logo.svg.png",
+    logo: ongc,
     title: "ONGC – Ahmedabad Asset",
     date: "06 Jan, 2022",
     description: "Additional Scraping Winch Units deployed on-site.",
