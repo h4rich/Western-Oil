@@ -23,11 +23,11 @@ import seros from "../assets/logo/seros.jpeg";
 import vedanta from "../assets/logo/Vedanta.jpg";
 import { TextGenerateEffect } from "../components/ui/text-generate-effect";
 import { Cover } from "../components/ui/cover";
-
+import { ThreeDMarquee } from "../components/ui/3d-marquee";
 
 const words = ` We have proudly partnered with some of the most respected names in the
           oil & gas sector. Our commitment to safety, quality, and performance
-          sets us apart in every operation.`
+          sets us apart in every operation.`;
 
 const heroSlides = [
   {
@@ -139,6 +139,40 @@ const scrollSmoothBy = (element, distance, duration = 600) => {
 };
 
 const Hero = () => {
+  const images = [
+    "https://i.pinimg.com/1200x/6d/cd/40/6dcd4089388dadc0f9dd1e8ede22192b.jpg",
+    "https://i.pinimg.com/736x/0c/00/c5/0c00c5c362003e8094e9161df1e66613.jpg",
+    "https://i.pinimg.com/736x/4c/d1/33/4cd133c4723755977d29d177e42ae9b4.jpg",
+    "https://i.pinimg.com/736x/d5/91/ea/d591ea303286d1ff8b6d7a174d7a1532.jpg",
+    "https://i.pinimg.com/1200x/e5/5e/c1/e55ec16df48a4695f1bc126895d8dfcf.jpg",
+    "https://i.pinimg.com/1200x/e7/6d/a3/e76da3f2ad9057c9eaedb056f1daf3ef.jpg",
+    "https://i.pinimg.com/736x/05/bb/ff/05bbffc835c235ceb74f26f4740b8d08.jpg",
+    "https://i.pinimg.com/736x/03/24/c6/0324c6e7069f0d7fb94f5ea5ed6a6664.jpg",
+    "https://i.pinimg.com/736x/97/a1/d3/97a1d3e58d60555b00e6b9fd4b982593.jpg",
+    "https://i.pinimg.com/1200x/3c/d8/90/3cd89049d78892df96a89ac2bf6be8b0.jpg",
+    "https://i.pinimg.com/736x/f3/18/c1/f318c10d1d1f6df49ff76dc5eed7a8ea.jpg",
+    "https://i.pinimg.com/1200x/63/ac/51/63ac510adf054f963b393fb3cca21b5c.jpg",
+    "https://i.pinimg.com/1200x/67/93/1f/67931fd72627439687fea408c8b7749b.jpg",
+    "https://i.pinimg.com/736x/0c/c7/f4/0cc7f4fc4fbdfa6fc9540e0ec69b5e07.jpg",
+    "https://i.pinimg.com/736x/72/5a/3b/725a3b7e18ce3f2620dcda79704ca69d.jpg",
+    "https://i.pinimg.com/1200x/67/93/1f/67931fd72627439687fea408c8b7749b.jpg",
+    "https://i.pinimg.com/736x/ab/ef/8a/abef8a24cadd725d5b80bc891576bc5a.jpg",
+    "https://i.pinimg.com/736x/0b/3c/9b/0b3c9bc8a72115d0dfe262edcc093277.jpg",
+    "https://i.pinimg.com/736x/b3/95/eb/b395eb268cbcc67beffca5b62e50598f.jpg",
+    "https://i.pinimg.com/1200x/c9/91/8c/c9918cc78c98bcc85763ed384a5c26ea.jpg",
+    "https://i.pinimg.com/736x/fe/1d/5a/fe1d5a10b06a8ab0e20dc58ff8a752df.jpg",
+    "https://i.pinimg.com/1200x/0f/14/49/0f14498dc290d71a9e7e0fff69b04469.jpg",
+    "https://i.pinimg.com/1200x/bc/e8/66/bce86679444685f2401c7800f7c4c80b.jpg",
+    "https://i.pinimg.com/736x/eb/83/23/eb8323dfe993f25ec4f93bc4d9cc1d26.jpg",
+    "https://i.pinimg.com/1200x/92/47/9e/92479ede464d022c556e637f9b78925a.jpg",
+    "https://i.pinimg.com/1200x/e4/7c/c7/e47cc753e4c6ab8d496b3b8e35d565eb.jpg",
+    "https://i.pinimg.com/1200x/ec/2e/1c/ec2e1c540842ea8b88da36e8938bf8cf.jpg",
+    "https://i.pinimg.com/736x/35/73/a4/3573a4314eaa712b42feb00db2a5438f.jpg",
+    "https://i.pinimg.com/736x/bb/57/d5/bb57d5fc4ecb7eb19074b6651ae3a525.jpg",
+    "https://i.pinimg.com/736x/a2/99/8c/a2998c5fb3af5345a29a2e0764a36c33.jpg",
+    "https://i.pinimg.com/1200x/b5/86/bb/b586bbacb604b84df73c1d00514f2fb2.jpg",
+  ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const scrollRef = useRef(null);
@@ -222,13 +256,18 @@ const Hero = () => {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-         <h4 className="text-2xl md:text-2xl lg:text-5xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
-        <Cover> Trusted by Industry Leaders</Cover>
-      </h4>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            <TextGenerateEffect words={words} />
-        </p>
+        <h4 className="text-2xl md:text-2xl lg:text-5xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+          <Cover> Trusted by Industry Leaders</Cover>
+        </h4>
+        <div className="text-lg text-gray-600 max-w-3xl text-justify mx-auto">
+          <TextGenerateEffect words={words} />
+        </div>
       </motion.section>
+
+      <div className="mx-auto my-10 max-full  bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
+        <ThreeDMarquee images={images} />
+      </div>
+
       {/* Client Logos Section */}
       <section className=" bg-gray-100 py-12 px-4">
         <motion.h3

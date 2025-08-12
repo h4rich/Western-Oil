@@ -1,19 +1,31 @@
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const handleClose = () => setIsOpen(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setServicesOpen(false);
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
+    {
+      name: "Services",
+      subLinks: [
+        { name: "Providing Services", path: "/services/providing-services" },
+        { name: "Manufacturing", path: "/services/manufacturing" },
+      ],
+    },
     { name: "QHSE", path: "/qhse" },
     { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const overlayVariants = {
@@ -28,9 +40,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-13 h-13 rounded flex items-center justify-center">
-              <img src={logo} alt="logo" className="h-full w-auto" />
-            </div>
+            <img src={logo} alt="logo" className="h-10 w-auto" />
             <div>
               <h1 className="text-2xl italic font-bold text-red-600">
                 WESTERN
@@ -41,42 +51,17 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Desktop Links */}
-          <div
-            className={`hidden lg:flex items-center space-x-6 ${
-              isOpen ? "hidden" : "lg:hidden"
-            }`}
+          {/* Menu Button */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-gray-700 hover:text-blue-600 transition"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className="text-gray-800 hover:text-blue-600 font-medium capitalize transition"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md"
-            >
-              Contact
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div>
-            <button
-              onClick={() => setIsOpen(true)}
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          </div>
+            <Menu className="w-7 h-7" />
+          </button>
         </div>
       </nav>
 
-      {/* Mobile Overlay Menu */}
+      {/* Full-Screen Overlay Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -86,45 +71,74 @@ export default function Header() {
             exit="exit"
             variants={overlayVariants}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-gray-900 backdrop-blur-xl z-50 flex flex-col items-center justify-center space-y-8"
+            className="fixed inset-0 bg-gray-900 backdrop-blur-xl z-50 flex flex-col items-center justify-center space-y-6 px-6"
           >
+            {/* Close Button */}
             <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-6 right-6 text-gray-700 hover:text-red-600"
+              onClick={handleClose}
+              className="absolute top-6 right-6 text-gray-300 hover:text-red-600"
             >
               <X className="w-7 h-7" />
             </button>
 
-            {navLinks.map((link, index) => (
-              <motion.div
-                key={link.name}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index }}
-              >
-                <Link
-                  to={link.path}
-                  onClick={handleClose}
-                  className="text-white text-2xl text-gray-800 hover:text-blue-600 font-semibold"
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
+            {/* Nav Links */}
+            {navLinks.map((link, index) =>
+              link.subLinks ? (
+                <div key={link.name} className="w-full max-w-xs">
+                  {/* Main Services Button */}
+                  <button
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                    className="flex justify-between items-center w-full text-white text-2xl font-semibold hover:text-yellow-400"
+                  >
+                    {link.name}
+                    {servicesOpen ? (
+                      <ChevronUp className="w-6 h-6" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6" />
+                    )}
+                  </button>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * navLinks.length }}
-            >
-              <Link
-                to="/contact"
-                onClick={handleClose}
-                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-md text-lg"
-              >
-                Contact
-              </Link>
-            </motion.div>
+                  {/* Sub Services Animated */}
+                  <AnimatePresence>
+                    {servicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="mt-2 ml-4 space-y-2 border-l border-gray-600 pl-4"
+                      >
+                        {link.subLinks.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            to={sub.path}
+                            onClick={handleClose}
+                            className="block text-gray-300 hover:text-yellow-400 text-lg"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 * index }}
+                >
+                  <Link
+                    to={link.path}
+                    onClick={handleClose}
+                    className="text-white text-2xl hover:text-yellow-400 font-semibold"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              )
+            )}
           </motion.div>
         )}
       </AnimatePresence>

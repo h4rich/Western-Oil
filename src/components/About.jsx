@@ -10,7 +10,8 @@ import {
 import director from "../assets/director.jpeg";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import aboutImage from "../assets/aboutSection/aboutImage.png"
+import aboutImage from "../assets/aboutSection/aboutImage.png";
+import { SparkleCore } from "../components/ui/sparkle";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,20 +23,31 @@ const About = () => {
 
   return (
     <section id="about" className="bg-gray-50">
-      {/* Top Image */}
-      <motion.div
-        className="w-full"
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeInUp}
-        transition={{ duration: 0.6 }}
-      >
-        <img
-          src= {aboutImage  }
-          alt="Oil Field"
-          className="w-full h-auto sm:h-[450px]"
-        />
-      </motion.div>
+      <div className="h-[30rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
+        <h3 className="md:text-4xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
+          About Western Oil Field Services
+        </h3>
+        <div className="w-[80rem] h-20  relative">
+          {/* Gradients */}
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm " />
+          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+          {/* Core component */}
+          <SparkleCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={1200}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+
+          {/* Radial Gradient to prevent sharp edges */}
+          <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        </div>
+      </div>
 
       {/* Main Content */}
       <div className="container mx-auto px-4 lg:px-8 py-16">
@@ -50,19 +62,16 @@ const About = () => {
             <motion.h2
               className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
               variants={fadeInUp}
-            >
-              About Western Oil Field Services
-            </motion.h2>
+            ></motion.h2>
 
             <motion.p
               className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10"
               variants={fadeInUp}
               transition={{ delay: 0.2 }}
             >
-              <strong>Western Oil Field Services (WOFS)</strong> is an ISO 9001,
-              14001 and OHSMS 45001 certified company headquartered in Ahmedabad,
-              Gujarat. We provide cutting-edge services in the Oil & Gas sector,
-              tailored to industry demands and client expectations.
+              <strong>Western Oil Field Services (WOFS)</strong> is an ISO 9001
+              14001 and OHSMS 45001 certified company with head office in
+              Ahmedabad, Gujarat, providing Oil and Gas Field Services.
             </motion.p>
 
             <motion.div
@@ -93,20 +102,33 @@ const About = () => {
               transition={{ delay: 0.4 }}
             >
               {[
-                { icon: <FaAward className="text-blue-600" />, label: "18+ Years Experience" },
-                { icon: <FaTools className="text-blue-600" />, label: "Advanced Technology" },
-                { icon: <FaShieldAlt className="text-blue-600"  />, label: "Strong Safety Culture" },
-                { icon: <FaLeaf className="text-blue-600"  />, label: "Eco-Friendly Operations" },
-                { icon: <FaPhoneAlt className="text-blue-600"  />, label: "400+ Skilled Staff" },
+                {
+                  icon: <FaAward className="text-blue-600" />,
+                  label: "18+ Years Experience",
+                },
+                {
+                  icon: <FaTools className="text-blue-600" />,
+                  label: "Advanced Technology",
+                },
+                {
+                  icon: <FaShieldAlt className="text-blue-600" />,
+                  label: "Strong Safety Culture",
+                },
+                {
+                  icon: <FaLeaf className="text-blue-600" />,
+                  label: "Eco-Friendly Operations",
+                },
+                {
+                  icon: <FaPhoneAlt className="text-blue-600" />,
+                  label: "400+ Skilled Staff",
+                },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
                   className="flex flex-col items-center text-center px-4"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="text-teal-500 text-3xl mb-3">
-                    {item.icon}
-                  </div>
+                  <div className="text-teal-500 text-3xl mb-3">{item.icon}</div>
                   <p className="text-gray-800 font-medium">{item.label}</p>
                 </motion.div>
               ))}
@@ -124,10 +146,13 @@ const About = () => {
                   Who We Are
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-justify">
-                  WOFS stands as a reliable partner in the Oil and Gas industry.
-                  Our commitment to quality isn’t a matter of chance — it’s the
-                  outcome of tireless dedication, consistent innovation, and
-                  operational excellence.
+                  Western Oilfield Services (WOFS) is one of the leading
+                  providers of services in the Oil and Gas sector. Our
+                  commitment to quality is not a matter of chance—it is the
+                  result of consistent hard work, dedication, and a focus on
+                  operational excellence. We strive to deliver services that
+                  effectively and efficiently meet the diverse needs of our
+                  clients.
                   <br />
                   <br />
                   We aim to meet and exceed the evolving needs of our clients
@@ -145,15 +170,21 @@ const About = () => {
                   18+ Years of Trusted Service
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-justify">
-                  WOFS has been proudly serving Oil & Natural Gas Corporation
-                  Ltd. (ONGC)—a Government of India enterprise—at its Ahmedabad,
-                  Cambay, Mehsana and Bokaro Asset.
+                  For the past 18 years, WOFS has been proudly serving PSU Oil &
+                  Natural Gas Corporation Ltd. (ONGC)—a Government of India
+                  enterprise—at its Ahmedabad, Cambay, Mehsana and Bokaro Asset.
+                  In addition, we have successfully assosiated with private and
+                  government oilfield operators such as GSPCL, Cairn, Essar,
+                  Selan Exploration, Presscot Services, Hermes Technologies, and
+                  others, delivering services to their complete satisfaction.
                   <br />
                   <br />
-                  We've partnered with GSPCL, Cairn, Essar, Selan, Presscot,
-                  Hermes, and many more, backed by 400+ skilled professionals
-                  across India. Our forward-thinking approach enables us to
-                  solve dynamic industry challenges with confidence.
+                  With a dedicated workforce of over 400 skilled professionals
+                  and operations across India, WOFS brings a blend of
+                  experience, innovation, and manpower excellence to every
+                  project. Our forwardthinking approach enables us to meet the
+                  dynamic challenges of the evolving Oil and Gas industry with
+                  confidence and capability
                 </p>
               </motion.div>
             </div>
@@ -183,7 +214,7 @@ const About = () => {
         </section>
 
         {/* Director Section */}
-        <section className="bg-[#2e343a] mt-15 text-white py-20 px-6 sm:px-12 relative overflow-hidden">
+        <section className="bg-gray-800 mt-15 text-white py-20 px-6 sm:px-12 relative overflow-hidden">
           <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left Content */}
             <motion.div
@@ -195,8 +226,8 @@ const About = () => {
                 Leadership
               </p>
               <h2 className="text-4xl font-bold leading-tight">
-                Excellent company{" "}
-                <span className="text-blue-500">quality</span> services
+                Excellent company <span className="text-blue-500">quality</span>{" "}
+                services
               </h2>
               <div className="mt-6 flex items-center gap-3">
                 <span className="w-12 h-1 bg-blue-500"></span>
@@ -215,11 +246,11 @@ const About = () => {
               <div className="relative mb-6">
                 <Quote className="text-red-700" />
                 <p className="text-lg leading-relaxed text-gray-200">
-                  Ashish Agarwal, the Managing Director and CEO of Seros, brings
-                  over 25 years of extensive experience in steel, shipping,
-                  ports, and logistics. Under his leadership, Seros has thrived
-                  through strategic direction and a robust portfolio of
-                  offerings...
+                  <strong>Pathan Mo. Zamir Valimohammed</strong>, , the Founder
+                  of Western Oil Field Services, brings over 30 years of
+                  extensive experience in Oil and Gas Field. Under his
+                  leadership, Western Oil Field Services has thrived through
+                  strategic direction and a robust portfolio of offerings.
                 </p>
               </div>
 
@@ -230,7 +261,7 @@ const About = () => {
                   className="w-16 h-16 rounded-md object-fill"
                 />
                 <div>
-                  <p className="text-white font-bold text-lg">Mr. Zamir Khan</p>
+                  <p className="text-white font-bold text-lg">Pathan Mo. Zamir Valimohammed</p>
                   <p className="text-gray-300 text-sm">
                     Managing Director & CEO
                   </p>
