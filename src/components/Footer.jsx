@@ -27,17 +27,10 @@ const Footer = () => {
             {/* Company Info */}
             <motion.div {...fadeInUp}>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-                  <img src={logo} alt="logo" className="w-full h-full object-contain" />
+                <div className="flex items-center justify-center">
+                  <img src={logo} alt="logo" className="pl-5 h-16 w-auto -my-2 scale-250" />
                 </div>
-                <div>
-                  <h3 className="text-2xl italic font-bold text-red-500 hover:text-red-300 transition-colors">
-                    WESTERN
-                  </h3>
-                  <p className="text-sm italic text-blue-400">
-                    Oil Field Services
-                  </p>
-                </div>
+              
               </div>
               <p className="text-gray-300 mb-4">
                 Leading Oil Field Services provider with ISO certifications and

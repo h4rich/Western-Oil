@@ -22,7 +22,7 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="about" className="bg-gray-50">
+    <section id="about" className="bg-gray-300">
       <div className="h-[30rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
         <h3 className="md:text-4xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
           About Western Oil Field Services
@@ -51,7 +51,7 @@ const About = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 lg:px-8 py-16">
-        <section className="bg-gray-50 px-4">
+        <section className="bg-gray-300 px-4">
           <motion.div
             className="max-w-6xl mx-auto text-center"
             initial="hidden"

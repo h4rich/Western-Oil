@@ -3,7 +3,6 @@ import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
-// import headerbg from "../assets/headerbg.png"
 import footerbg from "../assets/footerbg.png";
 
 
@@ -38,20 +37,12 @@ export default function Header() {
   };
 
   return (
-    <header style={{ backgroundImage: `url(${footerbg})` }} className="bg-white shadow-lg fixed w-full top-0  bg-cover bg-center bg-no-repeat flex items-center z-50">
+    <header style={{ backgroundImage: `url(${footerbg})` }} className="bg-white shadow-lg fixed w-full top-0 box-border  bg-cover bg-center bg-no-repeat flex items-center z-50">
       <nav className="w-full mx-auto px-5 bg-black/60">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="logo" className="h-10 w-auto" />
-            <div>
-              <h1 className="text-2xl italic font-bold text-red-600">
-                WESTERN
-              </h1>
-              <p className="text-sm italic font-bold text-blue-500">
-                Oil Field Services
-              </p>
-            </div>
+            <img src={logo} alt="logo"  className="pl-5 h-16 w-auto -my-2 scale-200" />
           </div>
 
           {/* Menu Button */}

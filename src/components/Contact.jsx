@@ -45,7 +45,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className=" bg-gray-50 ">
+    <section id="contact" className=" bg-gray-300 ">
       <div className=" mx-auto w-full">
         <div className="flex flex-col items-center justify-center h-[40rem] bg-black">
           <TypewriterEffectSmooth words={words} />
@@ -56,7 +56,7 @@ export default function Contact() {
         </div>
         <div className="w-full grid lg:grid-cols-1 gap-12 px-4 py-20">
           {/* Contact Info */}
-          <div className="relative p-6 sm:p-8 md:p-10 overflow-hidden shadow-2xl bg-gradient-to-br bg-gray-800 text-white">
+          <div className="relative p-6 sm:p-8 md:p-10 overflow-hidden shadow-2xl  bg-gray-800 text-white">
             {/* Decorative background shapes */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <motion.div
@@ -67,7 +67,6 @@ export default function Contact() {
                   repeat: Infinity,
                   repeatType: "mirror",
                 }}
-                className="absolute -top-20 -left-20 w-64 h-64 bg-blue-500 rounded-full blur-3xl"
               />
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -77,7 +76,6 @@ export default function Contact() {
                   repeat: Infinity,
                   repeatType: "mirror",
                 }}
-                className="absolute rounded-full blur-3xl"
               />
             </div>
 

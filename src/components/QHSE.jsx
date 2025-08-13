@@ -34,7 +34,7 @@ export default function QHSE() {
   };
 
   return (
-    <section className="bg-gray-200 w-auto">
+    <section className="bg-gray-300 w-auto">
       {/* Banner */}
        <div className="h-[30rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
             <h3 className="md:text-4xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">

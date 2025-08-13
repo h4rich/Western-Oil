@@ -250,7 +250,7 @@ const Hero = () => {
 
       {/* Heading and Paragraph Section */}
       <motion.section
-        className="bg-white py-22 px-4 text-center"
+        className="bg-gray-300 py-22 px-4 text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -264,12 +264,12 @@ const Hero = () => {
         </div>
       </motion.section>
 
-      <div className="mx-auto my-10 max-full  bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
+      <div className="mx-auto  max-full  bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
         <ThreeDMarquee images={images} />
       </div>
 
       {/* Client Logos Section */}
-      <section className=" bg-gray-100 py-12 px-4">
+      <section className=" bg-gray-300 py-12 px-4">
         <motion.h3
           className="text-2xl sm:text-3xl text-center font-bold text-blue-700 mb-8"
           initial={{ opacity: 0, y: 20 }}

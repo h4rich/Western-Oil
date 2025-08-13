@@ -4,7 +4,6 @@ import hermes from "../assets/logo/hermes.avif";
 import essar from "../assets/logo/Essar.png";
 import oilmax from "../assets/logo/oilmax.png";
 import { SparkleCore } from "../components/ui/sparkle";
-import { motion } from "framer-motion";
 import { HoverEffect } from "../components/ui/card-hover-effect";
 
 const Projects = () => {
@@ -66,7 +65,7 @@ const Projects = () => {
     },
   ];
   return (
-    <section className=" bg-gray-200 ">
+    <section className=" bg-gray-300 ">
       {/* Banner */}
       <div className="h-[30rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden">
         <h3 className="md:text-4xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
