@@ -97,7 +97,7 @@ const Footer = () => {
                 {[
                   {
                     icon: <SiLinkedin />,
-                    link: "https://www.linkedin.com/company/western-oil-services/",
+                    link: "https://www.linkedin.com/company/western-oil-field-services/",
                   },
                   { icon: <SiX />, link: "#" },
                   { icon: <SiFacebook />, link: "#" },
