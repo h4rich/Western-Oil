@@ -62,7 +62,7 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
     <div
       className={cn(
         // Responsive text sizes
-        "text-base sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center w-full",
+        "text-base   sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center w-full",
         className
       )}
     >
@@ -127,7 +127,7 @@ export const TypewriterEffectSmooth = ({
       >
         <div
           // Responsive text sizes
-          className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold"
+          className="text-2xl sm:text-2xl md:text-3xl lg:text-5xl font-bold"
           style={{ whiteSpace: "nowrap" }}
         >
           {renderWords()}

@@ -3,6 +3,9 @@ import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
+// import headerbg from "../assets/headerbg.png"
+import footerbg from "../assets/footerbg.png";
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,8 +38,8 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-50">
-      <nav className="container mx-auto px-4 lg:px-8">
+    <header style={{ backgroundImage: `url(${footerbg})` }} className="bg-white shadow-lg fixed w-full top-0  bg-cover bg-center bg-no-repeat flex items-center z-50">
+      <nav className="w-full mx-auto px-5 bg-black/60">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -54,9 +57,9 @@ export default function Header() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="text-gray-700 hover:text-blue-600 transition"
+            className="text-white hover:text-blue-600 transition"
           >
-            <Menu className="w-7 h-7" />
+            <Menu className="w-7 h-7 " />
           </button>
         </div>
       </nav>

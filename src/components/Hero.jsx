@@ -238,10 +238,10 @@ const Hero = () => {
               transition={{ delay: 0.9 }}
             >
               <Link
-                to="/services"
+                to="/contact"
                 className="cursor-pointer px-6 py-3 bg-yellow-500 text-black font-semibold rounded-full hover:bg-yellow-400 transition duration-300"
               >
-                Our Services
+                Contact
               </Link>
             </motion.div>
           </motion.div>
@@ -256,7 +256,7 @@ const Hero = () => {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <h4 className="text-2xl md:text-2xl lg:text-5xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+        <h4 className="text-2xl md:text-2xl lg:text-5xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700">
           <Cover> Trusted by Industry Leaders</Cover>
         </h4>
         <div className="text-lg text-gray-600 max-w-3xl text-justify mx-auto">
