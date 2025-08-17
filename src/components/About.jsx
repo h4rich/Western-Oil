@@ -199,7 +199,7 @@ const About = () => {
             >
               <button
                 onClick={() => navigate("/contact")}
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium text-sm"
+                className="inline-flex items-center gap-2 cursor-pointer bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-medium text-sm"
               >
                 <FaPhoneAlt className="w-4 h-4" /> Contact Our Team
               </button>
@@ -258,10 +258,10 @@ const About = () => {
                 <img
                   src={director}
                   alt="Mr. Zamir Khan"
-                  className="w-16 h-16 rounded-md object-fill"
+                  className="w-28 h-28 rounded-md object-fill"
                 />
                 <div>
-                  <p className="text-white font-bold text-lg">Pathan Mo. Zamir Valimohammed</p>
+                  <p className="text-white font-bold text-md">Pathan Mo. Zamir Valimohammed</p>
                   <p className="text-gray-300 text-sm">
                     Managing Director & CEO
                   </p>

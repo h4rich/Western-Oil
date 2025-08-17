@@ -14,14 +14,14 @@ const fadeInUp = {
 const Footer = () => {
   return (
     <motion.footer
-      className="text-white  z-40 bg-cover bg-center bg-no-repeat"
+      className="text-white z-40 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${footerbg})` }}
       initial="initial"
       whileInView="whileInView"
       transition={{ staggerChildren: 0.2 }}
       viewport={{ once: true }}
     >
-      <div className="bg-black/70 w-full h-full p-8 md:p-12 lg:p-16">
+      <div className="bg-black/50 w-full h-full p-8 md:p-12 lg:p-16">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
@@ -40,7 +40,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <motion.div {...fadeInUp}>
-              <h4 className="text-lg font-bold mb-4 text-blue-400 hover:text-blue-300 transition-colors">
+              <h4 className="text-lg font-bold mb-4 text-blue-500 hover:text-blue-300 transition-colors">
                 Quick Links
               </h4>
               <ul className="space-y-2 flex flex-col">
@@ -90,7 +90,7 @@ const Footer = () => {
 
             {/* Social Media */}
             <motion.div {...fadeInUp}>
-              <h4 className="text-lg font-bold mb-4 text-blue-400 hover:text-blue-300 transition-colors">
+              <h4 className="text-lg font-bold mb-4 text-blue-500 hover:text-blue-300 transition-colors">
                 Social Networking
               </h4>
               <div className="flex space-x-4 mt-6">
@@ -119,7 +119,7 @@ const Footer = () => {
 
             {/* Contact Info */}
             <motion.div {...fadeInUp}>
-              <h4 className="text-lg font-bold mb-4 text-blue-400 hover:text-blue-300 transition-colors">
+              <h4 className="text-lg font-bold mb-4 text-blue-500 hover:text-blue-300 transition-colors">
                 Contact Info
               </h4>
               <div className="space-y-3 text-gray-300">
@@ -128,6 +128,8 @@ const Footer = () => {
                   Ahmedabad-380024, Gujarat
                 </p>
                 <p>hrwesternoilfield@gmail.com</p>
+                <p>westernoilfield@gmail.com</p>
+
               </div>
             </motion.div>
           </div>

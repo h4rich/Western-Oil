@@ -11,6 +11,20 @@ import QHSE from "./components/QHSE";
 import Notfound from "./components/Notfound";
 import load from "./assets/load.png";
 import { motion } from "framer-motion";
+import ScrollToTop from "./components/ScrollToTop";
+
+import ChemicalPump from "./components/services/ChemicalPump";
+import CrudeOil from "./components/services/CrudeOil";
+import DrillingRig from "./components/services/DrillingRig";
+import FiveTon from "./components/services/FiveTon";
+import HotOilUnit from "./components/services/HotOilUnit";
+import Manpower from "./components/services/Manpower";
+import PumpingUnit from "./components/services/PumpingUnit";
+import ScrapingUnit from "./components/services/ScrapingUnit";
+import SteamingUnit from "./components/services/SteamingUnit";
+import TenTon from "./components/services/TenTon";
+import ThreeTon from "./components/services/ThreeTon";
+import Air from "./components/services/Air";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -75,6 +89,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/not-found" element={<Notfound />} />
 
@@ -87,6 +102,57 @@ function App() {
             path="services/providing-services"
             element={<ProvidingServices />}
           />
+
+          <Route
+            path="services/providing-services/drilling-rig"
+            element={<DrillingRig />}
+          />
+          <Route
+            path="services/providing-services/30-ton-work-over-rig"
+            element={<ThreeTon />}
+          />
+          <Route
+            path="services/providing-services/50-ton-work-over-rig"
+            element={<FiveTon />}
+          />
+          <Route
+            path="services/providing-services/100-ton-work-over-rig"
+            element={<TenTon />}
+          />
+          <Route
+            path="services/providing-services/air-compressor"
+            element={<Air />}
+          />
+
+          <Route
+            path="services/providing-services/hot-oil-circulation-units"
+            element={<HotOilUnit />}
+          />
+          <Route
+            path="services/providing-services/mobile-steaming-unit"
+            element={<SteamingUnit />}
+          />
+          <Route
+            path="services/providing-services/mobile-pumping-units"
+            element={<PumpingUnit />}
+          />
+          <Route
+            path="services/providing-services/crude-oil-effluent-water-tankers"
+            element={<CrudeOil />}
+          />
+          <Route
+            path="services/providing-services/scraping-winch-units"
+            element={<ScrapingUnit />}
+          />
+          <Route
+            path="services/providing-services/chemical-dozing-pump"
+            element={<ChemicalPump />}
+          />
+          <Route
+            path="services/providing-services/om-manpower-services"
+            element={<Manpower />}
+          />
+
           <Route path="services/manufacturing" element={<Manufacturing />} />
 
           <Route path="qhse" element={<QHSE />} />

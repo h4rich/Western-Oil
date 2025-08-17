@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Simple className merge helper (instead of cn from "@/lib/utils")
+// Simple className merge helper
 function cn(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -10,9 +10,9 @@ export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div
+    <div  
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 py-10 ",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 items-stretch gap-1", // items-stretch + gap
         className
       )}
     >
@@ -27,7 +27,7 @@ export const HoverEffect = ({ items, className }) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-600/[0.8] block rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-slate-600/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -42,24 +42,20 @@ export const HoverEffect = ({ items, className }) => {
             )}
           </AnimatePresence>
           <Card>
-            {/* Logo */}
             {item.logo && (
               <img
                 src={item.logo}
                 alt={`${item.title} logo`}
-                className="w-15 h-15 bg-white object-contain rounded-md mb-4 "
+                className="w-15 h-15 bg-white object-contain rounded-md mb-4"
               />
             )}
 
-            {/* Date */}
             {item.date && (
               <p className="text-xs text-gray-400 mb-2">{item.date}</p>
             )}
 
-            {/* Title */}
             <CardTitle>{item.title}</CardTitle>
 
-            {/* Description */}
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </a>
@@ -72,11 +68,11 @@ export const Card = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "rounded-2xl h-auto w-full p-4 overflow-hidden bg-gray-800 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full flex flex-col p-4 overflow-hidden bg-gray-800 border border-transparent group-hover:border-slate-700 relative z-20", // h-full + flex
         className
       )}
     >
-      <div className="relative z-50">
+      <div className="relative z-50 flex-1 flex flex-col justify-between"> {/* flex-1 for equal height */}
         <div className="p-4">{children}</div>
       </div>
     </div>
@@ -85,12 +81,7 @@ export const Card = ({ className, children }) => {
 
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4
-      className={cn(
-        "text-zinc-100 font-bold tracking-wide mt-4",
-        className
-      )}
-    >
+    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
       {children}
     </h4>
   );

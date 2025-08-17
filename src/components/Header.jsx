@@ -37,20 +37,20 @@ export default function Header() {
   };
 
   return (
-    <header style={{ backgroundImage: `url(${footerbg})` }} className="bg-white shadow-lg fixed w-full top-0 box-border  bg-cover bg-center bg-no-repeat flex items-center z-50">
-      <nav className="w-full mx-auto px-5 bg-black/60">
+    <header style={{ backgroundImage: `url(${footerbg})` }} className="shadow-lg fixed w-full top-0 box-border bg-cover bg-center bg-no-repeat flex items-center z-50">
+      <nav className=" w-full mx-auto px-5">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="logo"  className="pl-5 h-16 w-auto -my-2 scale-200" />
+            <img src={logo} alt="logo"  className="pl-6 h-16 w-auto -my-2 scale-250" />
           </div>
 
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="text-white hover:text-blue-600 transition"
+            className="text-black hover:text-blue-600 transition"
           >
-            <Menu className="w-7 h-7 " />
+            <Menu className="w-7 h-7"/>
           </button>
         </div>
       </nav>

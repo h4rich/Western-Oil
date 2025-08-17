@@ -264,7 +264,7 @@ const Hero = () => {
         </div>
       </motion.section>
 
-      <div className="mx-auto  max-full  bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
+      <div className="mx-auto  max-full p-2 ring-1 ring-neutral-700/10 bg-neutral-800">
         <ThreeDMarquee images={images} />
       </div>
 

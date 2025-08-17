@@ -4,6 +4,7 @@ import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { motion } from "framer-motion";
 
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -90,8 +91,8 @@ export default function Contact() {
               {/* Company Info */}
               <div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold mb-6 italic">
-                  <span className="text-red-400">WESTERN </span>
-                  <span className="text-blue-400">Oil Field Services</span>
+                  <span className="text-black-400">WE<span className="text-blue-700">ST</span>ERN </span>
+                  <span className="text-black-400">Oil Field Services</span>
                 </h3>
 
                 <div className="space-y-6">
@@ -131,6 +132,9 @@ export default function Contact() {
                       <h4 className="font-semibold mb-1">Email</h4>
                       <p className="text-gray-300 text-sm sm:text-base">
                         hrwesternoilfield@gmail.com
+                      </p>
+                       <p className="text-gray-300 text-sm sm:text-base">
+                        westernoilfield@gmail.com
                       </p>
                     </div>
                   </motion.div>
